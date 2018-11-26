@@ -305,32 +305,6 @@ void flyod(int x,int y)//flyod warshall algo
 	cout << "\n\tMinimum distance between your specified source and destination is ->	" << min[x][y];
 }
 
-void flyod()//flyod warshall algo
-{
-	int min[11][11];//matrix used in floyd warshall
-	for(int i=0;i<11;i++)
-	{
-		for(int j=0;j<11;j++)
-		{
-			min[i][j]=dijk[i][j];
-		}
-	}
-	for (int k=0; k<11; k++)
-	{
-		for(int i=0; i<11; i++)
-		{
-			for(int j=0; j<11; j++)
-			{
-				if(min[i][k] + min[k][j] < min[i][j])
-				{
-					min[i][j] = min[i][k] + min[k][j];
-					parent[i][j] = k;
-				}
-			}
-		}
-	}
-}
-
 void cost(int x,int y)
 {
 	double price[11][11];//matrix used in floyd warshall
